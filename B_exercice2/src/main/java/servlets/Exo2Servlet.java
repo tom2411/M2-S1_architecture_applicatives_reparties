@@ -32,7 +32,7 @@ public class Exo2Servlet extends HttpServlet {
             for (Option option : options) {
                 if (Integer.parseInt(request.getSession().getAttribute("key").toString())== option.key){
                     option.incr();
-                    request.setAttribute("cpt",option.cpt);
+
                 }
             }
         }

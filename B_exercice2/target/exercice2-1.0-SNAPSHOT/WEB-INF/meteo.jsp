@@ -12,14 +12,15 @@
 <form method="post">
     <select name="meteo">
         <c:forEach items="${options}" var="opt">
-        <option value="${opt.key}">${opt.value}</option>
+        <option value="${opt.key}" <c:if test="${key == opt.key}"> selected </c:if>> ${opt.value}</option>
         </c:forEach>
     </select>
     <button type="submit">Valider</button>
 </form>
-<c:if test="${not empty key}">
-    <p> la clé choisi est ${key}</p>
-    <p> la fréquence est de ${cpt}</p>
-</c:if>
+<c:forEach items="${options}" var="opt">
+    <p> la fréquence ${opt.value} est de ${opt.cpt}</p>
+</c:forEach>
+
+
 </body>
 </html>
