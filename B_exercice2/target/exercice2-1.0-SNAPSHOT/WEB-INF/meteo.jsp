@@ -18,6 +18,9 @@
     </select>
     <button type="submit">Valider</button>
 </form>
+<c:if test="${not empty key}">
+    <p> la clé choisi est ${key}</p>
+</c:if>
 
 </body>
 </html>

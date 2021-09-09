@@ -1,8 +1,11 @@
 package servlets;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/")
@@ -16,21 +19,33 @@ public class Exo2Servlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        toJsp(request,response);
+        String key = request.getParameter("meteo");
+        request.setAttribute("key",key);
+        for (Option option: options) {
+            if (key.equals(String.valueOf(option.key))){
+
+            }
+        }
+        request.getRequestDispatcher("WEB-INF/meteo.jsp").forward(request,response);
+
     }
 
     private void toJsp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("options",options);
+        HttpSession session = request.getSession();
+        session.setAttribute("options", options);
         request.getRequestDispatcher("WEB-INF/meteo.jsp").forward(request,response);
     }
 
     public class Option{
         private String value;
         private int key;
+        private int cpt;
 
         public Option(String value, int key) {
             this.value = value;
             this.key = key;
+            this.cpt = 0 ;
         }
 
         public String getValue() {
@@ -40,5 +55,9 @@ public class Exo2Servlet extends HttpServlet {
         public int getKey() {
             return key;
         }
+
+        public int getCpt() { return cpt;}
+
+        public void incr() { this.cpt++;}
     }
 }
