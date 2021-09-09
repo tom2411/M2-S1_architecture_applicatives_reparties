@@ -12,7 +12,11 @@
 <form method="post">
     <select name="meteo">
         <c:forEach items="${options}" var="opt">
-        <option value="${opt.key}" <c:if test="${key == opt.key}"> selected </c:if>> ${opt.value}</option>
+        <option value="${opt.key}"
+                <c:if test="${key == opt.key}">
+                    selected
+                </c:if>> ${opt.value}
+        </option>
         </c:forEach>
     </select>
     <button type="submit">Valider</button>
