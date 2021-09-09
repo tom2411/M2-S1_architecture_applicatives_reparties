@@ -24,7 +24,7 @@
 
     <div>
         <h3>Puis avec un formulaire (POST)</h3>
-        <form method="post"  action="TodoServlet">
+        <form method="post" action="TodoServlet">
             <button type="submit" name="TODO" value="bonjour">bonjour</button>
             <button type="submit" name="TODO" value="beau">il fait beau</button>
             <button type="submit" name="BIDON" value="bidon">Sans passer de TODO</button>
