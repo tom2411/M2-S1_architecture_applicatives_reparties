@@ -9,7 +9,6 @@
 <body>
 
 <!-- implanter ici le nombre de fois où chaque option de météo a été validée -->
-
 <form method="post">
     <select name="meteo">
         <c:forEach items="${options}" var="opt">
@@ -20,7 +19,7 @@
 </form>
 <c:if test="${not empty key}">
     <p> la clé choisi est ${key}</p>
+    <p> la fréquence est de ${cpt}</p>
 </c:if>
-
 </body>
 </html>
