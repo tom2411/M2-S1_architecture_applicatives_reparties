@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/A_exemple1" />
-    <file type="web" url="file://$PROJECT_DIR$/A_exercice1" />
-    <file type="web" url="file://$PROJECT_DIR$/B_exemple2" />
-    <file type="web" url="file://$PROJECT_DIR$/B_exercice2" />
-    <file type="web" url="file://$PROJECT_DIR$/C_exemple3" />
-    <file type="web" url="file://$PROJECT_DIR$/C_exercice3" />
-    <file type="web" url="file://$PROJECT_DIR$/D_exemple4" />
-    <file type="web" url="file://$PROJECT_DIR$/D_exercice4" />
-    <file type="web" url="file://$PROJECT_DIR$/F_exemple6" />
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
