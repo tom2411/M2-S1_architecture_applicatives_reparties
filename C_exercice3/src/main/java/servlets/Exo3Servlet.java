@@ -30,8 +30,8 @@ public class Exo3Servlet extends HttpServlet {
             char caractere = request.getParameter("lecaractere").charAt(0);
             if (this.nbEssaisRestants>0 && !this.devine.equals(this.aDeviner)){
                 System.out.println(caractere);
-                System.out.println("bonjour");
-                test(caractere);
+                boolean res = test(caractere);
+                System.out.println(res);
                 System.out.println("devine="+this.devine);
                 request.getRequestDispatcher("/WEB-INF/essai.jsp").forward(request, response);
 
@@ -47,14 +47,21 @@ public class Exo3Servlet extends HttpServlet {
     }
 
     private boolean test(char carac){
+        System.out.println("debut");
         boolean res=false;
         for (int last=0;last!=-1;last=aDeviner.indexOf(carac,last)) {
             res = true;
+            System.out.println("last dans le for = "+aDeviner.indexOf(carac,last));
+            last = aDeviner.indexOf(carac,last);
             devine.setCharAt(last, carac);
+            System.out.println(last);
+            last++;
         }
         if (res==false) {
+            System.out.println("nbEssai--");
             nbEssaisRestants--;
         }
+        System.out.println("sortie");
         return res;
     }
 }
