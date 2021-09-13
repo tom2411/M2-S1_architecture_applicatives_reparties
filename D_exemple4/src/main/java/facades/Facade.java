@@ -30,6 +30,7 @@ public class Facade {
 
     }
 
+
     public void ajout(String key) {
         int nbajouts=0;
         if (compteur.containsKey(key)) {
