@@ -12,19 +12,15 @@
 <form method="post">
     <select name="meteo">
         <c:forEach items="${options}" var="opt">
-        <option value="${opt.key}"
-                <c:if test="${key == opt.key}">
-                    selected
-                </c:if>> ${opt.value}
-        </option>
+            <%-- ici ${meteo} est la valeur dans la requete : celle passee a l'invocation précédente... --%>
+            <option value="${opt.key}" <c:if test="${opt.key==param.meteo}">selected</c:if>>
+                    <%-- la session est une map : on chercher dedans une entrée avec le nom de l'option... --%>
+                    ${opt.value} ${sessionScope[opt.value]}
+            </option>
         </c:forEach>
     </select>
     <button type="submit">Valider</button>
 </form>
-<c:forEach items="${options}" var="opt">
-    <p> la fréquence ${opt.value} est de ${opt.cpt}</p>
-</c:forEach>
-
 
 </body>
 </html>

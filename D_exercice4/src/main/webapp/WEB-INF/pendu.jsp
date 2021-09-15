@@ -8,10 +8,10 @@
 </head>
 <body>
 <p>bienvenu dans le jeu de pendu...</p>
-Quel mot proposez-vous ?
+Quel mot proposez-vous (en minuscules) ?
 <form method="post">
-    <input type="text" name="lemot">
-    <button type="submit">Envoyer</button> <!-- TODO compléter le bouton -->
+    <input type="text" pattern="[a-z]*" minlength="1" name="lemot" required>
+    <button type="submit" name="TODO" value="setMot">Envoyer</button>
 </form>
 </body>
 </html>
